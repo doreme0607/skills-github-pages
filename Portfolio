@@ -1,1 +1,245 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keerthana • Student Portfolio</title>
+  <meta name="description" content="Keerthana's student portfolio — projects, skills, achievements, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f10;
+      --card:#111618;
+      --muted:#9fb1b4;
+      --text:#eaf2f2;
+      --accent:#2ecc71; /* soft green */
+      --accent-2:#24a860;
+      --ring: 0 0 0 3px color-mix(in hsl, var(--accent) 35%, transparent);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:linear-gradient(180deg, #071314, #0d1315 40%, #0b0f10);
+      color:var(--text); font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1100px, 92%); margin-inline:auto}/* NAV */
+header{position:sticky; top:0; backdrop-filter: blur(10px); background: rgba(11,15,16,.6); border-bottom:1px solid #1e2628; z-index:50}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+.brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.5px}
+.brand .dot{width:10px;height:10px;border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent)}
+.links{display:flex; gap:18px; flex-wrap:wrap}
+.links a{padding:8px 12px; border-radius:999px; color:var(--muted)}
+.links a:hover{background:#152022; color:var(--text)}
 
+/* HERO */
+.hero{display:grid; grid-template-columns: 1fr; gap:28px; align-items:center; padding:56px 0 28px}
+@media (min-width: 900px){ .hero{grid-template-columns: 290px 1fr; gap:48px; padding:76px 0} }
+
+.card{background:linear-gradient(180deg, #0e1416, #0a0f10); border:1px solid #1b2426; border-radius:24px; padding:22px}
+.avatar-wrap{display:grid; place-items:center}
+.avatar{
+  --size: 220px; width:var(--size); aspect-ratio:1; border-radius:50%; object-fit:cover;
+  border:6px solid color-mix(in srgb, var(--accent), #fff 20%);
+  box-shadow:0 30px 80px rgba(46,204,113,.15), 0 0 0 10px rgba(46,204,113,.06);
+}
+.tag{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border:1px solid #1b2426; border-radius:999px; color:var(--muted); margin-right:8px; margin-bottom:8px}
+.tag .dot{width:8px; height:8px; border-radius:50%; background:var(--accent)}
+
+h1{font-family:Fraunces, Inter, serif; font-size:clamp(28px, 5vw, 44px); line-height:1.1; margin:4px 0 10px}
+h2{font-family:Fraunces, Inter, serif; font-size:clamp(22px, 4vw, 28px); margin:0 0 14px}
+p.lead{color:#cfe3e0; font-size:clamp(16px, 2.2vw, 18px)}
+
+.cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+.btn{padding:10px 14px; border-radius:12px; border:1px solid #1b2426; background:#101719; color:var(--text); font-weight:600}
+.btn:hover{outline: none; box-shadow:var(--ring)}
+.btn.primary{background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-color:transparent; color:#06100b}
+
+/* GRID SECTIONS */
+section{padding:30px 0}
+.grid{display:grid; gap:18px}
+@media (min-width: 850px){ .grid.cols-3{grid-template-columns:repeat(3, 1fr)} }
+@media (min-width: 700px){ .grid.cols-2{grid-template-columns:repeat(2, 1fr)} }
+
+.project{border:1px solid #1b2426; border-radius:18px; overflow:hidden; background:#0d1416}
+.project img{width:100%; height:180px; object-fit:cover}
+.project .p-body{padding:14px}
+.project .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+.chip{border:1px solid #203134; padding:4px 10px; border-radius:999px; color:var(--muted); font-size:12px}
+
+.timeline{border-left:2px solid #223033; margin:8px 0 0 10px; padding-left:16px}
+.t-item{margin:10px 0; position:relative}
+.t-item::before{content:""; position:absolute; left:-21px; top:2px; width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(46,204,113,.15)}
+.muted{color:var(--muted)}
+
+/* CONTACT */
+form{display:grid; gap:12px}
+input, textarea{background:#0d1416; border:1px solid #1b2426; border-radius:12px; padding:12px; color:var(--text)}
+input:focus, textarea:focus{outline:none; box-shadow:var(--ring)}
+textarea{min-height:120px}
+
+footer{padding:46px 0 60px; color:var(--muted); text-align:center}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home"><span class="dot"></span> Keerthana</a>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>  <main id="home" class="container">
+    <section class="hero">
+      <div class="card avatar-wrap">
+        <!-- 👉 Replace the src below with your photo/logo. It will appear as a circle automatically. -->
+        <img class="avatar" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=600&auto=format&fit=crop" alt="Keerthana profile logo" />
+      </div><div class="card">
+    <div class="tags">
+      <span class="tag"><span class="dot"></span> Student • BCA</span>
+      <span class="tag"><span class="dot"></span> Aspiring Game Developer</span>
+      <span class="tag"><span class="dot"></span> JS • Python</span>
+    </div>
+    <h1>Hi, I’m Keerthana.</h1>
+    <p class="lead">I’m a curious learner who loves building simple, delightful projects. I’m exploring <strong>web dev</strong> and <strong>game development</strong>, and I’m also learning <strong>Korean & Japanese</strong>. This is my little corner on the web — welcome! 🌿</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See Projects</a>
+      <a class="btn" href="#contact">Contact Me</a>
+      <a class="btn" href="resume.pdf" download>Download Résumé</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <div class="grid cols-2">
+    <div class="card">
+      <h2>About</h2>
+      <p>I’m currently pursuing <strong>BCA</strong>. I enjoy turning ideas into working prototypes and sharing what I learn. My interests include <em>front‑end UI</em>, <em>DSA basics</em>, and <em>creative coding</em>. In my free time, you’ll find me practicing languages or sketching UI ideas.</p>
+    </div>
+    <div class="card">
+      <h2 id="skills">Skills</h2>
+      <p class="muted">(Edit this list to match you)</p>
+      <div class="chips">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Python</span>
+        <span class="chip">C</span>
+        <span class="chip">Git & GitHub</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Canva/Photoshop Basics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="grid cols-3">
+      <!-- Project 1 -->
+      <article class="project">
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Todo app screenshot" />
+        <div class="p-body">
+          <h3>FocusTodo</h3>
+          <p class="muted">A distraction‑free to‑do app with keyboard shortcuts and local storage.</p>
+          <div class="chips">
+            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span>
+          </div>
+          <p><a href="#" class="btn" style="margin-top:10px; display:inline-block">Live Demo</a></p>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project">
+        <img src="https://images.unsplash.com/photo-1514790193030-c89d266d5a9d?q=80&w=1200&auto=format&fit=crop" alt="Portfolio site" />
+        <div class="p-body">
+          <h3>PixelRunner</h3>
+          <p class="muted">A tiny endless‑runner made in vanilla JS and Canvas. Mobile friendly.</p>
+          <div class="chips">
+            <span class="chip">JavaScript</span><span class="chip">Canvas</span>
+          </div>
+          <p><a href="#" class="btn" style="margin-top:10px; display:inline-block">Play</a></p>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project">
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="Study planner" />
+        <div class="p-body">
+          <h3>Study Planner</h3>
+          <p class="muted">Simple planner that generates study slots and exports your timetable.</p>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Flask</span>
+          </div>
+          <p><a href="#" class="btn" style="margin-top:10px; display:inline-block">GitHub</a></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="achievements" class="container">
+  <div class="grid cols-2">
+    <div class="card">
+      <h2>Achievements</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <strong>2025</strong> – Presented a seminar to B.Sc. CS & DS students on beginner web dev.
+        </div>
+        <div class="t-item">
+          <strong>2024</strong> – Built first portfolio and published projects on GitHub.
+        </div>
+        <div class="t-item">
+          <strong>2024</strong> – Completed DSA practicals: linked lists & ADTs.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Certifications</h2>
+      <ul class="muted">
+        <li>Python for Everybody – Coursera</li>
+        <li>Responsive Web Design – freeCodeCamp</li>
+        <li>Intro to Git & GitHub – Google</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <div class="grid cols-2">
+    <div class="card">
+      <h2>Contact</h2>
+      <p class="muted">This form uses <code>mailto:</code>. Replace the email in the form action with yours.</p>
+      <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+        <input name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button class="btn primary" type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Links</h2>
+      <p>
+        <a class="btn" href="#">GitHub</a>
+        <a class="btn" href="#">LinkedIn</a>
+        <a class="btn" href="#">Instagram</a>
+      </p>
+      <p class="muted">Tip: add your resume file as <code>resume.pdf</code> beside this HTML file so the download button works.</p>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container">© <span id="y"></span> Keerthana • Made with ❤️ and curiosity.</div>
+  </footer>  <script>
+    // Set current year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script></body>
+</html>
